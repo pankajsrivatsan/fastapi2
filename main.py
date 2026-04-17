@@ -148,12 +148,6 @@ def get_students_by_department(dept:Department= Depends(get_department_or_404), 
   #convert to StudentResponse
  #→ send JSON
 #basic query request stuff function 
-
-
-    
-
-
-
 @app.get("/top-students")
 def get_top_students(db: Session = Depends(get_db)):
     results = (
@@ -165,6 +159,3 @@ def get_top_students(db: Session = Depends(get_db)):
     )
     return [{"name": name, "avg_score": float(avg)} for name, avg in results]
 
-
-    
-    
